@@ -8,7 +8,6 @@ const $input__fecha = document.getElementById('input__fecha');
 
 export function inicializarEventos(){
 
-
     $btnAgregar.addEventListener('click',() => {
 
         if(lista.length >= 5) return console.warn('Llegaste al maximo de cuantas regresivas.')

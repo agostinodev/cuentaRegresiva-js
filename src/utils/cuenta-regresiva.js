@@ -1,7 +1,6 @@
-import { eliminarItem } from "./estado.js";
 
 
-export function cuentaRegresiva(id, fechaUsuario, $elemento){
+export function cuentaRegresiva(fechaUsuario, $elemento){
 
     const [anio, mes, dia] = fechaUsuario.split('-').map(Number);
   

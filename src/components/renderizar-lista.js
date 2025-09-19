@@ -9,6 +9,7 @@ export function renderizarLista(){
 
     $lista.innerHTML = '';
 
+    console.log(lista);
 
     lista.forEach( item => {
 
@@ -18,7 +19,7 @@ export function renderizarLista(){
         const $span = $clone.querySelector('.item__tiempo');
         const $btnEliminar = $clone.querySelector('.item__btn-eliminar');
 
-        cuentaRegresiva(item.id, item.fecha, $span);
+        cuentaRegresiva(item.fecha, $span);
 
 
         $btnEliminar.addEventListener('click', () => {
