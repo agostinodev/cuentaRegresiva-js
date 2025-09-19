@@ -12,11 +12,22 @@ export function inicializarEventos(){
     $btnAgregar.addEventListener('click',() => {
 
         if(lista.length >= 5) return console.warn('Llegaste al maximo de cuantas regresivas.')
-
+        
         let descripcion = $inputDescripcion.value.trim();
         let fecha = $input__fecha.value;
+
+        if(!descripcion) return console.warn('La descripción es obligatoria.')
+        if(!/[a-zA-Z]+/.test(descripcion)) return console.warn('La descripción no puede contener números y symbolos.');
+
+        
+        if(!fecha) return console.warn('Ingrese una fecha valida.')
+
         agregarItem(descripcion, fecha)
         renderizarLista()
+
+        $inputDescripcion.value = '';
+        $input__fecha.value = '';
+        
         
     });
 

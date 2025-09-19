@@ -17,7 +17,8 @@ export function renderizarLista(){
         $clone.querySelector('.item__descripcion').textContent = item.descripcion;
         const $span = $clone.querySelector('.item__tiempo');
         const $btnEliminar = $clone.querySelector('.item__btn-eliminar');
-        cuentaRegresiva(item.fecha, $span);
+
+        cuentaRegresiva(item.id, item.fecha, $span);
 
 
         $btnEliminar.addEventListener('click', () => {
