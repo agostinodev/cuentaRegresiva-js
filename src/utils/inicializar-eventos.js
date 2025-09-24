@@ -2,8 +2,8 @@ import { renderizarLista } from "../components/renderizar-lista.js";
 import { agregarItem, lista } from "./estado.js";
 
 const $btnAgregar = document.getElementById('btn-agregar');
-const $inputDescripcion = document.getElementById('input__descripcion');
-const $input__fecha = document.getElementById('input__fecha');
+const $inputDescripcion = document.getElementById('input-evento');
+const $input__fecha = document.getElementById('input-fecha');
 
 
 export function inicializarEventos(){

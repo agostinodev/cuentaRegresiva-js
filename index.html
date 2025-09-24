@@ -3,33 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/output.css">
     <title>Cuenta Regresiva</title>
 </head>
-<body>
-    
-    <main class="main">
-        <h1 class="main__titulo">Cuenta Regresiva</h1>
-
-        
-        
-        <section class="main__lista-contenedor"></section>
-        <template class="template__lista">
-            <div class="item">
-                <p class="item__descripcion"></p>
-                <span id="tiempo" class="item__tiempo"></span>
-                <button class="item__btn-eliminar">Eliminar</button>
+<body class="min-h-screen min-w-full bg-gradient-to-b from-indigo-800 to-gray-950 text-gray-200 ">
+    <!-- Header -->
+    <header class="min-w-full bg-slate-900 flex items-center justify-between p-2 shadow-md">
+        <h1 class="text-gray-400">Cuenta Regresiva</h1>
+    </header>
+    <!-- Main -->
+    <main class="max-w-xl mx-auto min-h-screen flex flex-col items-center">
+        <section class="mb-3 sm:mb-20 mt-1 text-center">
+            <h2 class="font-semibold text-lg flex-none mt-7 mb-2">Crea cuentas regresivas</h2>
+            <p class="text-sm text-balance text-gray-400">Agrega hasta 5 cuentas regresivas al mismo tiempo.</p>
+        </section>
+        <!-- Sección lista de cuentas regresivas -->
+        <section id="lista" class="grid gap-4 col-span-ful min-w-full p-4"></section>
+        <template id="template-lista">
+            <!-- Item de la lista -->
+            <div class="bg-indigo-950 p-3 rounded-xl shadow-lg border-1 border-solid border-indigo-600">
+                <div class="flex justify-end mb-1">
+                    <button class="btn-eliminar cursor-pointer text-xs font-extrabold hover:scale-125 hover:text-orange-600 transition-transform">X</button>
+                </div>
+                <div class="mb-1 flex items-center gap-1 p-1 bg-gradient-to-r from-indigo-600 to-indigo-900 rounded-t-lg">
+                    <svg width="25" height="25">
+                        <use href="./assets/sprite.svg#calendario"/>
+                    </svg>
+                    <p class="evento text-sm font-medium">Cumple de macha</p>
+                </div>
+                <div class="p-2">
+                    <span class="tiempo text-sm">Faltan: 23 dias 20 horas 10 minutos 5 segundos</span>
+                </div>
             </div>
         </template>
-        <section class="main__formulario">
-            <div class="main__inputs">
-                <input id="input__evento" type="text">
-                <input id="input__fecha" type="date">
-                <!-- <div id="tiempo"></div> -->
+        <!-- Sección formulario -->
+        <section class="min-w-full p-4">
+            <div class="bg-indigo-950 p-3 rounded-xl shadow-lg border-1 border-solid border-indigo-600 flex justify-between flex-wrap gap-2" >
+                <div class="flex  grow gap-2 items-center  justify-around  sm:justify-start">
+                    <input id="input-evento" class="text-xs grow bg-indigo-800 p-1 rounded-sm" placeholder="Evento" type="text">
+                    <input id="input-fecha" class="text-xs grow text-gray-400 bg-indigo-800 p-1 rounded-sm" type="date">
+                </div>
+                <div class="flex grow justify-end">
+                    <button id="btn-agregar" class="text-xs grow bg-green-600 rounded-sm hover:opacity-25 hover:scale-105 cursor-pointer">Agregar</button>
+                </div>    
             </div>
-            <button id="btn-agregar">Agregar</button>
         </section>
     </main>
+    <footer class="min-w-full bg-gray-950 p-8 sm:p-16 text-center flex justify-center items-center">
+        <p class="text-xs text-gray-500 text-balance">© 2025 Agostino Dev. Todos los derechos reservados. | Hecho con ❤ por Agostino Dev.</p>
+    </footer>
     <script type="module" src="app.js"></script>
 </body>
 </html>

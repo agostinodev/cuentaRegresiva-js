@@ -4,8 +4,8 @@ import { cuentaRegresiva } from "../utils/cuenta-regresiva.js";
 
 export function renderizarLista(){
 
-    const $lista = document.querySelector('.main__lista-contenedor');
-    const $template = document.querySelector('.template__lista');
+    const $lista = document.querySelector('#lista');
+    const $template = document.querySelector('#template-lista');
 
 
 
@@ -17,9 +17,9 @@ export function renderizarLista(){
 
             const $clone = $template.content.cloneNode(true);
 
-            $clone.querySelector('.item__descripcion').textContent = item.descripcion;
-            const $span = $clone.querySelector('.item__tiempo');
-            const $btnEliminar = $clone.querySelector('.item__btn-eliminar');
+            $clone.querySelector('.evento').textContent = item.descripcion;
+            const $span = $clone.querySelector('.tiempo');
+            const $btnEliminar = $clone.querySelector('.btn-eliminar');
 
             cuentaRegresiva(item.fecha, $span);
 
